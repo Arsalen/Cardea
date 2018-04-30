@@ -1,0 +1,181 @@
+<!doctype html>
+<html class="no-js " lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <meta name="description" content="Responsive Bootstrap 4 and web Application ui kit.">
+
+  <title>:: Cardea Hospital :: </title>
+  <!-- Favicon-->
+
+</head>
+
+<body class="theme-cyan authentication sidebar-collapse" style="background-image: url(assets/images/login.jpg)">
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg fixed-top navbar-transparent">
+  <div class="container">
+    <div class="navbar-translate n_logo">
+      <button class="navbar-toggler" type="button">
+        <span class="navbar-toggler-bar bar1"></span>
+        <span class="navbar-toggler-bar bar2"></span>
+        <span class="navbar-toggler-bar bar3"></span>
+      </button>
+    </div>
+    <div class="navbar-collapse">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+        </li>
+        <li class="nav-item">
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" title="Follow us on Twitter" href="javascript:void(0);" target="_blank">
+            <i class="zmdi zmdi-twitter"></i>
+            <p class="d-lg-none d-xl-none">Twitter</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" title="Like us on Facebook" href="javascript:void(0);" target="_blank">
+            <i class="zmdi zmdi-facebook"></i>
+            <p class="d-lg-none d-xl-none">Facebook</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" title="Follow us on Instagram" href="javascript:void(0);" target="_blank">
+            <i class="zmdi zmdi-instagram"></i>
+            <p class="d-lg-none d-xl-none">Instagram</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link btn  btn-round"  (click)="goto_signin()">SIGN IN</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- End Navbar -->
+<div class="page-header">
+  <div class="page-header-image" style="background-image:url(assets/images/login.jpg)"></div>
+  <div class="container">
+    <div class="col-md-12">
+      <div class="card-plain">
+        <div class="header">
+          <br><br><br><br>
+          <div class="logo-container">
+            <img src="assets/images/logo.svg" alt="">
+          </div>
+
+          <h6>Cardea</h6>
+        </div>
+        <div class="content" >
+
+
+          <!-- <p>Optional</p> -->
+          <div class="input-group">
+            <input type="text" class="form-control" [(ngModel)]="referral" name="referral"  placeholder="referral(Optional)">
+            <span class="input-group-addon">
+                                <i class="zmdi zmdi-email"></i>
+                            </span>
+          </div>
+
+          <div class="input-group" >
+              <input  type="text" class="form-control"   [(ngModel)]="imageurl" name="imageurl" placeholder="image">
+              <span class="input-group-addon">
+                  <i class="zmdi zmdi-account-circle"></i>
+                </span>
+            </div>
+
+
+          <div class="input-group" >
+            <input  type="text" class="form-control"   [(ngModel)]="firstname" name="firstname" placeholder="firstname">
+            <span class="input-group-addon">
+                <i class="zmdi zmdi-account-circle"></i>
+              </span>
+          </div>
+          <div class="input-group" >
+            <input type="text" class="form-control" [(ngModel)]="lastname" name="lastname" placeholder="lastname">
+            <span class="input-group-addon">
+                <i class="zmdi zmdi-account-circle"></i>
+              </span>
+          </div>
+          <div class="input-group">
+            <input type="text" class="form-control" [(ngModel)]="address" name="address" placeholder="address">
+            <span class="input-group-addon">
+                <i class="zmdi zmdi-account-circle"></i>
+              </span>
+          </div>
+          <div class="input-group">
+            <input type="text" class="form-control" [(ngModel)]="phonenumber" name="phonenumber" placeholder="phonenumber">
+            <span class="input-group-addon">
+                <i class="zmdi zmdi-account-circle"></i>
+              </span>
+          </div>
+          <div class="input-group">
+            <!-- <input type="text" class="form-control" [(ngModel)]="sex" name="sex" placeholder="sex"> -->
+            <select class="form-control" [(ngModel)]="sex" name="sex" placeholder="sex">
+              <option>Male</option>
+              <option>Female</option>
+            </select>
+
+            <span class="input-group-addon">
+                <i class="zmdi zmdi-account-circle"></i>
+              </span>
+          </div>
+          <div class="input-group">
+            <!-- <input type="text" class="form-control" [(ngModel)]="maritalstatus" name="maritalstatus" placeholder="maritalstatus"> -->
+            <select class="form-control" [(ngModel)]="maritalstatus" name="maritalstatus" placeholder="maritalstatus">
+                <option>Single</option>
+                <option>Married</option>
+              </select>
+            
+            <span class="input-group-addon">
+                <i class="zmdi zmdi-account-circle"></i>
+              </span>
+          </div>
+          <div class="input-group">
+            <input type="text" class="form-control" [(ngModel)]="occupation" name="occupation"  placeholder="occupation">
+            <span class="input-group-addon">
+                <i class="zmdi zmdi-account-circle"></i>
+              </span>
+          </div>
+
+          <div class="input-group">
+            <input type="text" class="form-control" [(ngModel)]="email" name="email"  placeholder="Email">
+            <span class="input-group-addon">
+                                <i class="zmdi zmdi-email"></i>
+                            </span>
+          </div>
+
+        </div>
+
+        <div class="footer text-center">
+          <a (click)="submitform(firstname,lastname,imageurl,address,phonenumber,sex,maritalstatus,occupation,email,referral)" class="btn btn-primary btn-round btn-lg btn-block waves-effect waves-light">SIGN UP</a>
+          <h5><a class="link" routerLink="/login">Clinic ?</a></h5>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="footer">
+    <div class="container">
+      <nav>
+        <ul>
+          <li><a href="http://thememakker.com/contact/" target="_blank">Contact Us</a></li>
+          <li><a href="http://thememakker.com/about/" target="_blank">About Us</a></li>
+          <li><a href="javascript:void(0);">FAQ</a></li>
+        </ul>
+      </nav>
+      <div class="copyright">
+        &copy;
+        <script>
+          document.write(new Date().getFullYear())
+        </script>,
+        <span>Designed by <a href="../../../../index.html" target="_blank">ThemeMakker</a></span>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<!-- Jquery Core Js -->
+
+</body>
+</html>
